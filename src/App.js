@@ -5,7 +5,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Button />
+        <Button title="button" variant="confirm" size="lg" disabled />
       </div>
     );
   }

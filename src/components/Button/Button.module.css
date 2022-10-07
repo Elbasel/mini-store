@@ -1,0 +1,63 @@
+.button {
+  width: 100%;
+  background-size: 200% !important;
+  transition: 0.5s 10ms;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  border: 1px solid;
+}
+
+.button:hover {
+  background-position: left;
+}
+
+.button:disabled {
+  border-color: transparent;
+  color: white;
+  background: var(--color-shadow);
+}
+
+.button:disabled:hover {
+  color: white;
+}
+
+/* Sizes */
+.sm {
+  width: 100px;
+}
+
+.md {
+  width: 200px;
+}
+
+.lg {
+  width: 300px;
+}
+
+/* Varients */
+
+.regular {
+  border-color: var(--color-dark);
+  background: linear-gradient(
+      to left,
+      var(--color-bg) 50%,
+      var(--color-dark) 50%
+    )
+    right;
+}
+
+.regular:hover {
+  color: white;
+}
+
+.confirm {
+  border-color: var(--color-green);
+  background: linear-gradient(to left, var(--color-green) 50%, white 50%) right;
+  color: white;
+}
+
+.confirm:hover {
+  color: var(--color-dark);
+}
