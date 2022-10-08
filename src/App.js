@@ -6,16 +6,19 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { CurrencyProvider } from "./lib/CurrencyContext";
 
 export default class App extends Component {
   render() {
     return (
-      <Router>
-        <header>
-          <Navbar />
-        </header>
-        <main></main>
-      </Router>
+      <CurrencyProvider>
+        <Router>
+          <header>
+            <Navbar />
+          </header>
+          <main></main>
+        </Router>
+      </CurrencyProvider>
     );
   }
 }

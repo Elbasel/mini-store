@@ -1,15 +1,11 @@
 import React, { Component, createRef } from "react";
 import styles from "./CurrencySwitcher.module.css";
 import arrowDown from "../../../assets/arrow-down.svg";
-
-const currency = {
-  label: "USD",
-  symbol: "$",
-};
-
-const changeGlobalCurrency = () => {};
+import { CurrencyContext } from "../../../lib/CurrencyContext";
 
 export default class CurrencySwitcher extends Component {
+  static contextType = CurrencyContext;
+
   state = {
     modalOpen: false,
   };
@@ -31,8 +27,9 @@ export default class CurrencySwitcher extends Component {
     }
   };
 
-  handleClick = (curr) => {
-    changeGlobalCurrency(curr);
+  handleClick = (currency) => {
+    const { changeGlobalCurrency } = this.context;
+    changeGlobalCurrency(currency);
     this.modalRef.current.classList.add(styles.slideOut);
     setTimeout(() => {
       this.closeModal();
@@ -49,6 +46,7 @@ export default class CurrencySwitcher extends Component {
 
   render() {
     const { currencies } = this.props;
+    const { currency } = this.context;
     return (
       <div ref={this.ref}>
         <div className={styles.symbol} onClick={this.openModal}>
@@ -61,14 +59,14 @@ export default class CurrencySwitcher extends Component {
           }`}
           ref={this.modalRef}
         >
-          {currencies.map((curr) => (
+          {currencies.map((currency) => (
             <li
-              key={curr.label}
+              key={currency.label}
               className={styles.currencyItem}
-              onClick={() => this.handleClick(curr)}
+              onClick={() => this.handleClick(currency)}
             >
-              <span>{curr.symbol}</span>
-              <span>{curr.label}</span>
+              <span>{currency.symbol}</span>
+              <span>{currency.label}</span>
             </li>
           ))}
         </ul>
