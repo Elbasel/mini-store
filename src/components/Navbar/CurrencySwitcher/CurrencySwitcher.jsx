@@ -1,7 +1,9 @@
 import React, { Component, createRef } from "react";
-import styles from "./CurrencySwitcher.module.css";
-import arrowDown from "../../../assets/arrow-down.svg";
+
 import { CurrencyContext } from "../../../lib/CurrencyContext";
+
+import arrowDown from "../../../assets/arrow-down.svg";
+import styles from "./CurrencySwitcher.module.css";
 
 export default class CurrencySwitcher extends Component {
   static contextType = CurrencyContext;
@@ -10,30 +12,38 @@ export default class CurrencySwitcher extends Component {
     modalOpen: false,
   };
 
-  ref = createRef();
+  // To check when user clicks outside the container.
+  containerRef = createRef();
+
+  // To animate the modal closing
   modalRef = createRef();
 
-  openModal = () => {
+  toggleModal = () => {
+    if (this.state.modalOpen) {
+      this.closeModal();
+      return;
+    }
     this.setState({ modalOpen: true });
   };
 
   closeModal = () => {
-    this.setState({ modalOpen: false });
+    this.modalRef.current.classList.add(styles.slideOut);
+    setTimeout(() => {
+      this.setState({ modalOpen: false });
+    }, 400);
   };
 
   handleOutsideClick = (e) => {
-    if (!this.ref.current.contains(e.target)) {
+    if (!this.containerRef.current.contains(e.target)) {
       this.closeModal();
     }
   };
 
-  handleClick = (currency) => {
+  // Change currency value in enclosing context.
+  handleCurrencyClick = (currency) => {
     const { changeGlobalCurrency } = this.context;
     changeGlobalCurrency(currency);
-    this.modalRef.current.classList.add(styles.slideOut);
-    setTimeout(() => {
-      this.closeModal();
-    }, 400);
+    this.closeModal();
   };
 
   componentDidMount() {
@@ -46,13 +56,15 @@ export default class CurrencySwitcher extends Component {
 
   render() {
     const { currencies } = this.props;
-    const { currency } = this.context;
+    const { currency: selectedCurrency } = this.context;
+
     return (
-      <div ref={this.ref}>
-        <div className={styles.symbol} onClick={this.openModal}>
-          {currency.symbol}
+      <div ref={this.containerRef} className={styles.container}>
+        <div className={styles.symbol} onClick={this.toggleModal}>
+          {selectedCurrency.symbol}
           <img src={arrowDown} />
         </div>
+
         <ul
           className={`${styles.currencyModal} ${
             this.state.modalOpen ? "" : `${styles.hidden}`
@@ -62,8 +74,12 @@ export default class CurrencySwitcher extends Component {
           {currencies.map((currency) => (
             <li
               key={currency.label}
-              className={styles.currencyItem}
-              onClick={() => this.handleClick(currency)}
+              className={`${styles.currencyItem} ${
+                currency.label === selectedCurrency.label
+                  ? `${styles.selected}`
+                  : ""
+              }`}
+              onClick={() => this.handleCurrencyClick(currency)}
             >
               <span>{currency.symbol}</span>
               <span>{currency.label}</span>

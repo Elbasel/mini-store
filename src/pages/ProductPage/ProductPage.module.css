@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  grid-template-columns: 15% 1fr 40%;
+  gap: 1rem;
+}
+
+.gallery {
+  max-height: 80vh;
+  padding: 1rem;
+  overflow: scroll;
+}
+
+.gallery img:hover {
+  opacity: 0.8;
+}
+
+.mainImage img {
+  object-fit: contain;
+  width: 100%;
+  height: 80vh;
+}
+
+.info h1 {
+  font-weight: 600;
+}
+
+.info h2 {
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.attributes {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.priceContainer h2 {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}

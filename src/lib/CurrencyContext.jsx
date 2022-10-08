@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import {
   getFromLocalStorage,
   storeInLocalStorage,
-} from "../utils/LocalStrorage";
+} from "../utils/localStorage";
 
 export const CurrencyContext = createContext({
   currency: { label: null, symbol: null },
@@ -17,12 +17,13 @@ export class CurrencyProvider extends Component {
     },
   };
 
+  // Changes and stores the currency in localstorage
   changeGlobalCurrency = (currency) => {
     this.setState({ currency });
     storeInLocalStorage("currency", currency);
   };
 
-  // Set the previously saved currency from localstorage
+  // Set the previously saved currency from localstorage on mount
   componentDidMount() {
     const storedCurrency = getFromLocalStorage("currency");
     if (storedCurrency != null) {

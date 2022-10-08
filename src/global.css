@@ -14,10 +14,12 @@
   --color-shadow: #39374838;
   --color-hover: #d6d0d058;
   --font-body: "Raleway", sans-serif;
-  --horizontal-padding: 2rem;
+
+  /* horizontal padding is applied to <main> and <Navbar/> */
+  --horizontal-padding: 3rem;
 }
 
-// Allow for percetage based heights
+/* Allow for percetage based heights */
 body,
 html {
   height: 100%;
@@ -63,6 +65,7 @@ h3 {
 }
 
 main {
+  /* main shouldn't touch bottom of the screen or navbar */
   margin: 18px 0;
   padding: 0 var(--horizontal-padding);
 }
@@ -74,6 +77,13 @@ a {
 
 ul {
   list-style: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
 }
 
 /* Scrollbar */

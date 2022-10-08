@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
 import App from "./App";
+import { Toaster } from "react-hot-toast";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
@@ -14,6 +15,7 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <App />
+      <Toaster />
     </ApolloProvider>
   </React.StrictMode>
 );

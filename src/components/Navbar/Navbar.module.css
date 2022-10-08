@@ -6,9 +6,6 @@
   align-items: center;
   justify-content: space-between;
   background-color: white;
-
-  position: static;
-  top: 0;
 }
 
 .icon {
@@ -21,4 +18,10 @@
 
 .icon:hover {
   transform: scale(1.1) translateX(-50%);
+}
+
+.controlsContainers {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

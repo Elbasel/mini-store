@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+}
+
+.iconContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.itemCounter {
+  position: absolute;
+  top: -0.7rem;
+  left: 0.8rem;
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-dark);
+
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+}
+
+.miniCartModal {
+  position: fixed;
+  top: 80px;
+  right: 2rem;
+  min-width: 420px;
+  width: 30%;
+  height: 80%;
+  animation: slide-in 400ms ease-in-out;
+}
+
+.backdrop {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-shadow);
+  z-index: -1;
+  animation: fade-in 300ms;
+}
+
+.hidden {
+  display: none;
+}
+
+.slideOut {
+  animation: slide-out 300ms ease-in-out;
+}
+
+/* animations */
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+  }
+}
+
+@keyframes slide-out {
+  0% {
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+}
