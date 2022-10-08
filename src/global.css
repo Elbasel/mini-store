@@ -12,7 +12,9 @@
   --color-dark-green: #32b75e;
   --color-dark: #1d1f22;
   --color-shadow: #39374838;
+  --color-hover: #d6d0d058;
   --font-body: "Raleway", sans-serif;
+  --horizontal-padding: 2rem;
 }
 
 // Allow for percetage based heights
@@ -62,7 +64,16 @@ h3 {
 
 main {
   margin: 18px 0;
-  padding: 0 2%;
+  padding: 0 var(--horizontal-padding);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+ul {
+  list-style: none;
 }
 
 /* Scrollbar */

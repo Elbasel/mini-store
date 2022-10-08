@@ -1,0 +1,68 @@
+.symbol {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.currencyModal {
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  z-index: 99;
+  box-shadow: 0px 4px 35px 0px #a8acb030;
+  animation: slide-in 300ms;
+}
+
+.currencyItem {
+  cursor: pointer;
+  padding: 1rem 0.8rem;
+  display: flex;
+  transition: background-color 200ms;
+}
+
+.currencyItem:hover {
+  background-color: var(--color-hover);
+}
+
+.currencyItem span {
+  display: flex;
+  justify-content: center;
+  margin-right: 0.8rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.currencyItem span:nth-child(1) {
+  width: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.slideOut {
+  animation: slide-out 800ms ease-in-out;
+  animation-delay: 50ms;
+}
+/* animations */
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+    z-index: -1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+    z-index: -1;
+  }
+}

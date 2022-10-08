@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+}
+
+.link {
+  display: grid;
+  place-items: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 1.5rem 1rem;
+}
+
+.selected {
+  border-bottom: 2px solid var(--color-green);
+}

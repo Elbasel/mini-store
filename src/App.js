@@ -1,12 +1,21 @@
 import React, { Component } from "react";
-import Button from "./components/Button";
+import Navbar from "./components/Navbar";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Button title="button" variant="confirm" size="lg" disabled />
-      </div>
+      <Router>
+        <header>
+          <Navbar />
+        </header>
+        <main></main>
+      </Router>
     );
   }
 }

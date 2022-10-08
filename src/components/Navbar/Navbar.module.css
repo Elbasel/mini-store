@@ -1,0 +1,24 @@
+.navbar {
+  padding: 0 var(--horizontal-padding);
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+
+  position: static;
+  top: 0;
+}
+
+.icon {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 500ms;
+}
+
+.icon:hover {
+  transform: scale(1.1) translateX(-50%);
+}

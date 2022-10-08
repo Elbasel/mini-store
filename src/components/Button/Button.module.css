@@ -5,12 +5,16 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   border: 1px solid;
 }
 
 .button:hover {
   background-position: left;
+}
+
+.button:not(:disabled):active {
+  transform: scale(1.1);
 }
 
 .button:disabled {
