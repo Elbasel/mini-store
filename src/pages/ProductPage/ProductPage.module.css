@@ -8,7 +8,7 @@
 .gallery {
   max-height: 80vh;
   padding: 1rem;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .gallery img:hover {

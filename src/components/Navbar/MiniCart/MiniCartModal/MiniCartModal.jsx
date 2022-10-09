@@ -20,11 +20,8 @@ export default class MiniCartModal extends Component {
         </div>
 
         <div className={styles.productsContainer}>
-          {cart.map((cartProduct) => (
-            <MiniCartProduct
-              key={cartProduct.product.id}
-              cartProduct={cartProduct}
-            />
+          {cart.map((cartProduct, i) => (
+            <MiniCartProduct key={i} cartProduct={cartProduct} />
           ))}
         </div>
         <div className={styles.totalContainer}>

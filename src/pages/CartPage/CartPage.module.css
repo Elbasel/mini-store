@@ -1,0 +1,42 @@
+.container {
+  padding-bottom: 2rem;
+}
+
+.container h1 {
+  padding: 32px 0;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalContainer span {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.container table {
+  margin: 1.5rem 0;
+}
+
+.container td:nth-child(1) {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.container td:nth-child(2) {
+  display: block;
+  margin-left: 16px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}

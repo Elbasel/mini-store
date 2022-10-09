@@ -31,6 +31,7 @@ export default class App extends Component {
                 />
                 <Route path="/product/:id" component={ProductPage} />
                 <Route path="/cart" component={CartPage} />
+                <Route path="/checkout" component={() => <div>Checkout</div>} />
                 <Route path="/:category" component={ListingPage} />
               </Switch>
             </main>
