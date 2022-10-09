@@ -3,8 +3,11 @@ import styles from "./AttributeSet.module.css";
 
 export default class AttributeSet extends Component {
   render() {
-    const { attributes, selected, selectionHandler } = this.props;
+    let { attributes, selected, selectionHandler, size } = this.props;
     if (!attributes) return null;
+
+    const selectable = selectionHandler != null;
+    if (!selectionHandler) selectionHandler = () => {};
 
     return (
       <div>
@@ -15,13 +18,13 @@ export default class AttributeSet extends Component {
             <div className={styles.textSet}>
               {attributes.items.map((item) => (
                 <div
-                  className={`${styles.textItem} ${
-                    selected === item.value ? `${styles.selected}` : ""
-                  }`}
+                  className={`${styles.textItem} ${styles[size]} ${
+                    selectable ? `${styles.textItemSelectable}` : ""
+                  } ${selected === item.value ? `${styles.selected}` : ""}`}
                   key={item.id}
                   onClick={() => selectionHandler(attributes.id, item.value)}
                 >
-                  {item.displayValue}
+                  {item.value}
                 </div>
               ))}
             </div>
@@ -34,8 +37,8 @@ export default class AttributeSet extends Component {
               {attributes.items.map((item) => (
                 <div
                   className={`${styles.swatchItemWrapper} ${
-                    selected === item.value ? `${styles.selected}` : ""
-                  }`}
+                    selectable ? `${styles.swatchItemWrapperSelectable}` : ""
+                  } ${selected === item.value ? `${styles.selected}` : ""}`}
                   key={item.id}
                   onClick={() => selectionHandler(attributes.id, item.value)}
                 >
@@ -44,7 +47,7 @@ export default class AttributeSet extends Component {
                       background:
                         item.value === "#FFFFFF" ? "#0000002d" : item.value,
                     }}
-                    className={styles.swatchItem}
+                    className={`${styles.swatchItem} ${styles[size]}`}
                   ></div>
                 </div>
               ))}

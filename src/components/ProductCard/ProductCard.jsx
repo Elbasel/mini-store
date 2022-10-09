@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { ShoppingCartContext } from "../../lib/ShoppingCartContext";
-import Price from "../../components/Price";
+import { Price } from "../../components/Price";
 import CarIcon from "../../assets/cart-white.svg";
 
 import styles from "./ProductCard.module.css";
@@ -31,12 +31,14 @@ export default class ProductCard extends Component {
           <h3>{product.name}</h3>
           <Price prices={product.prices} className={styles.price} />
         </Link>
-        <div
-          className={styles.addToCart}
-          onClick={() => this.handleAddToCart(product)}
-        >
-          <img src={CarIcon}></img>
-        </div>
+        {product.inStock && (
+          <div
+            className={styles.addToCart}
+            onClick={() => this.handleAddToCart(product)}
+          >
+            <img src={CarIcon}></img>
+          </div>
+        )}
       </div>
     );
   }

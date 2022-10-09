@@ -3,6 +3,7 @@
   height: 100%;
   padding: 2rem;
   background-color: white;
+  overflow: scroll;
 }
 
 .titleContainer {
@@ -22,6 +23,9 @@
 
 .productsContainer {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .totalContainer {

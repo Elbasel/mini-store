@@ -3,12 +3,16 @@ import { graphql } from "@apollo/client/react/hoc";
 import React, { Component } from "react";
 import AttributeSet from "../../components/AttributeSet";
 import Button from "../../components/Button";
-import Price from "../../components/Price";
+import { Price } from "../../components/Price";
 import toast from "react-hot-toast";
+import { parseHtml } from "../../utils/parseHtml";
 
 import styles from "./ProductPage.module.css";
+import { ShoppingCartContext } from "../../lib/ShoppingCartContext";
 
 class ProductPage extends Component {
+  static contextType = ShoppingCartContext;
+
   state = {
     currentImage: "",
     selectedAttributes: {},
@@ -25,7 +29,9 @@ class ProductPage extends Component {
   };
 
   handleAddToCart = (product, selectedAttributes) => {
+    const { increaseItemQuantity } = this.context;
     toast.success("Added to cart");
+    increaseItemQuantity(product, selectedAttributes);
   };
 
   render() {
@@ -55,16 +61,18 @@ class ProductPage extends Component {
         <div className={styles.info}>
           <h1>{product.brand}</h1>
           <h2>{product.name}</h2>
-          <div className={styles.attributes}>
-            {product.attributes.map((attributeSet) => (
-              <AttributeSet
-                selectionHandler={this.handleAttributeSelection}
-                key={attributeSet.id}
-                attributes={attributeSet}
-                selected={this.state.selectedAttributes[attributeSet.id]}
-              />
-            ))}
-          </div>
+          {product.attributes.length > 0 && (
+            <div className={styles.attributes}>
+              {product.attributes.map((attributeSet) => (
+                <AttributeSet
+                  selectionHandler={this.handleAttributeSelection}
+                  key={attributeSet.id}
+                  attributes={attributeSet}
+                  selected={this.state.selectedAttributes[attributeSet.id]}
+                />
+              ))}
+            </div>
+          )}
           <div className={styles.priceContainer}>
             <h2>Price</h2>
             <Price prices={product.prices} className={styles.price} />
@@ -74,8 +82,13 @@ class ProductPage extends Component {
             variant="confirm"
             size="lg"
             disabled={canAddToCart}
-            onClick={this.handleAddToCart}
+            onClick={() =>
+              this.handleAddToCart(product, this.state.selectedAttributes)
+            }
           />
+          <div className={styles.description}>
+            {parseHtml(product.description)}
+          </div>
         </div>
       </div>
     );

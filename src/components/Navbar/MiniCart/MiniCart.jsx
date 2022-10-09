@@ -4,8 +4,11 @@ import CartIcon from "../../../assets/cart.svg";
 import MiniCartModal from "./MiniCartModal/";
 
 import styles from "./MiniCart.module.css";
+import { ShoppingCartContext } from "../../../lib/ShoppingCartContext";
 
 export default class MiniCart extends Component {
+  static contextType = ShoppingCartContext;
+
   state = {
     modalOpen: false,
   };
@@ -30,6 +33,7 @@ export default class MiniCart extends Component {
 
   handleOutsideClick = (e) => {
     if (!this.containerRef.current.contains(e.target)) {
+      if (e.target.tagName === "BUTTON" && e.target.textContent === "-") return;
       this.closeModal();
     }
   };
@@ -43,12 +47,15 @@ export default class MiniCart extends Component {
   }
 
   render() {
+    const { getCartQuantity } = this.context;
     return (
       <>
         <div className={styles.container} ref={this.containerRef}>
           <div onClick={this.toggleModal} className={styles.iconContainer}>
             <img src={CartIcon} />
-            <span className={styles.itemCounter}>3</span>
+            {+getCartQuantity() > 0 && (
+              <span className={styles.itemCounter}>{getCartQuantity()}</span>
+            )}
           </div>
           <div
             ref={this.modalRef}
