@@ -99,9 +99,7 @@ export class ShoppingCartProvider extends Component {
 
   render() {
     const { children } = this.props;
-
     const { cart } = this.state;
-
     const { getCartQuantity, increaseItemQuantity, decreaseItemQuantity } =
       this;
 

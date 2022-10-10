@@ -7,3 +7,16 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+.container details {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+}
+
+.container details p {
+  font-size: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}

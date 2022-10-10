@@ -5,12 +5,14 @@ import { gql } from "@apollo/client";
 import ProductCard from "../../components/ProductCard";
 
 import styles from "./ListingPage.module.css";
+import ErrorPage from "../ErrorPage";
 
 class ListingPage extends Component {
   render() {
-    const { category } = this.props.data;
+    const { category, error } = this.props.data;
 
-    if (!category) return null;
+    if (!category)
+      return error?.message ? <ErrorPage error={error.message} /> : null;
 
     return (
       <>

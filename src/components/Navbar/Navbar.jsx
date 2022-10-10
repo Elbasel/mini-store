@@ -13,13 +13,7 @@ class Navbar extends Component {
   render() {
     const { categories, currencies, error } = this.props.data;
 
-    if (!categories || !currencies)
-      return (
-        <div
-          className="skeleton skeleton-line"
-          style={{ "--l-h": "80px", "--c-w": "100%" }}
-        ></div>
-      );
+    if (!categories || !currencies) return null;
 
     return (
       <nav className={styles.navbar}>
