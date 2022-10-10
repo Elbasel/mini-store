@@ -1,16 +1,12 @@
-export function formatCurrency(number, currency) {
+export function formatCurrency(number, currencyLabel) {
   const formatter = new Intl.NumberFormat(undefined, {
     style: "currency",
-    currency,
+    currency: currencyLabel,
   });
 
   return formatter.format(number);
 }
 
 export function getPrice(prices, currencyLabel) {
-  for (const p of prices) {
-    if (p.currency.label === currencyLabel) {
-      return p.amount;
-    }
-  }
+  return prices.find((p) => p.currency.label === currencyLabel)?.amount;
 }

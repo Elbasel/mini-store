@@ -35,7 +35,6 @@ body {
 }
 
 /* Media defaults */
-
 img,
 svg {
   max-width: 100%;
@@ -48,8 +47,8 @@ button {
 }
 
 main {
-  padding-bottom: 2rem;
   padding: 0 var(--horizontal-padding);
+  padding-bottom: 4rem;
 }
 
 a {

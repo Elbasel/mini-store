@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { ShoppingCartContext } from "../../../../lib/ShoppingCartContext";
-import styles from "./MiniCartProduct.module.css";
+
 import AttributeSet from "../../../AttributeSet";
+import { ShoppingCartContext } from "../../../../lib/ShoppingCartContext";
 import { Price } from "../../../Price";
+import styles from "./MiniCartProduct.module.css";
 
 export default class MiniCartProduct extends Component {
   static contextType = ShoppingCartContext;

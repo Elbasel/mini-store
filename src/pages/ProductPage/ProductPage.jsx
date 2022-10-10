@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { gql } from "@apollo/client";
-import { parseHtml } from "../../utils/parseHtml";
+import { Interweave } from "interweave";
 import { graphql } from "@apollo/client/react/hoc";
 import toast from "react-hot-toast";
 
@@ -87,7 +87,7 @@ class ProductPage extends Component {
             }
           />
           <div className={styles.description}>
-            {parseHtml(product.description)}
+            <Interweave content={product.description} />
           </div>
         </div>
       </div>

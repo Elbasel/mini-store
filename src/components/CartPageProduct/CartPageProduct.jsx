@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import styles from "./CartPageProduct.module.css";
-import { Price } from "../../components/Price";
+
 import AttributeSet from "../AttributeSet";
+import { Price } from "../../components/Price";
 import { ShoppingCartContext } from "../../lib/ShoppingCartContext";
+import styles from "./CartPageProduct.module.css";
 
 export default class CartPageProduct extends Component {
   static contextType = ShoppingCartContext;

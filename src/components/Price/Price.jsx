@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { formatCurrency, getPrice } from "../../utils/price";
 import { CurrencyContext } from "../../lib/CurrencyContext";
 
@@ -26,8 +27,6 @@ export class Total extends Component {
     const { currency } = this.context;
 
     if (!cart || !currency) return null;
-
-    // if (!tax) tax = 0;
 
     const total = cart.reduce((total, item) => {
       return (

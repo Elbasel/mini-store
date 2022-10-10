@@ -1,7 +1,6 @@
 import React, { Component, createRef } from "react";
 
 import { CurrencyContext } from "../../../lib/CurrencyContext";
-
 import arrowDown from "../../../assets/arrow-down.svg";
 import styles from "./CurrencySwitcher.module.css";
 

@@ -2,9 +2,8 @@ import React, { Component, createRef } from "react";
 
 import CartIcon from "../../../assets/cart.svg";
 import MiniCartModal from "./MiniCartModal/";
-
-import styles from "./MiniCart.module.css";
 import { ShoppingCartContext } from "../../../lib/ShoppingCartContext";
+import styles from "./MiniCart.module.css";
 
 export default class MiniCart extends Component {
   static contextType = ShoppingCartContext;

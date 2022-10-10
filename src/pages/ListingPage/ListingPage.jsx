@@ -3,9 +3,8 @@ import { graphql } from "@apollo/client/react/hoc";
 import { gql } from "@apollo/client";
 
 import ProductCard from "../../components/ProductCard";
-
-import styles from "./ListingPage.module.css";
 import ErrorPage from "../ErrorPage";
+import styles from "./ListingPage.module.css";
 
 class ListingPage extends Component {
   render() {

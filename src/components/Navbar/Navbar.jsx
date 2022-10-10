@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import { graphql } from "@apollo/client/react/hoc";
 import { gql } from "@apollo/client";
 
-import styles from "./Navbar.module.css";
-
 import Icon from "../../assets/hero-icon.svg";
 import NavList from "./NavList";
 import CurrencySwitcher from "./CurrencySwitcher";
 import MiniCart from "./MiniCart";
+import styles from "./Navbar.module.css";
 
 class Navbar extends Component {
   render() {

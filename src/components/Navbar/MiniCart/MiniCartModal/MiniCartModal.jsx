@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import styles from "./MiniCartModal.module.css";
-import Button from "../../../Button";
 import { Link } from "react-router-dom";
-import { ShoppingCartContext } from "../../../../lib/ShoppingCartContext";
+
+import Button from "../../../Button";
 import MiniCartProduct from "../MiniCartProduct";
+import { ShoppingCartContext } from "../../../../lib/ShoppingCartContext";
 import { Total } from "../../../Price";
+import styles from "./MiniCartModal.module.css";
 
 export default class MiniCartModal extends Component {
   static contextType = ShoppingCartContext;
