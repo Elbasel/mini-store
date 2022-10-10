@@ -39,11 +39,11 @@ export default class MiniCart extends Component {
   };
 
   componentDidMount() {
-    document.addEventListener("click", this.handleOutsideClick);
+    document.addEventListener("mousedown", this.handleOutsideClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("click", this.handleOutsideClick);
+    document.removeEventListener("mousedown", this.handleOutsideClick);
   }
 
   render() {
@@ -57,14 +57,17 @@ export default class MiniCart extends Component {
               <span className={styles.itemCounter}>{getCartQuantity()}</span>
             )}
           </div>
-          <div
-            ref={this.modalRef}
-            className={`${styles.miniCartModal} ${
-              this.state.modalOpen ? "" : `${styles.hidden}`
-            }`}
-          >
-            <MiniCartModal closeModal={this.closeModal} />
-          </div>
+          {/* TODO: modal only needs to be rendered when state is open */}
+          {this.state.modalOpen && (
+            <div
+              ref={this.modalRef}
+              className={`${styles.miniCartModal} ${
+                this.state.modalOpen ? "" : `${styles.hidden}`
+              }`}
+            >
+              <MiniCartModal closeModal={this.closeModal} />
+            </div>
+          )}
         </div>
         {this.state.modalOpen && <div className={styles.backdrop}></div>}
       </>

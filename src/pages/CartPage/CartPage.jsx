@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { ShoppingCartContext } from "../../lib/ShoppingCartContext";
-import CartPageProduct from "../../components/CartPageProduct";
-import styles from "./CartPage.module.css";
-import { Total } from "../../components/Price";
-import Button from "../../components/Button";
 import { Link } from "react-router-dom";
+
+import CartPageProduct from "../../components/CartPageProduct";
+import Button from "../../components/Button";
+import { Total } from "../../components/Price";
+import { ShoppingCartContext } from "../../lib/ShoppingCartContext";
+import styles from "./CartPage.module.css";
 
 const TAX = 0.21;
 

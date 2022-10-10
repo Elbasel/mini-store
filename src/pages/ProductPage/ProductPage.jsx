@@ -1,14 +1,14 @@
-import { gql } from "@apollo/client";
-import { graphql } from "@apollo/client/react/hoc";
 import React, { Component } from "react";
+import { gql } from "@apollo/client";
+import { parseHtml } from "../../utils/parseHtml";
+import { graphql } from "@apollo/client/react/hoc";
+import toast from "react-hot-toast";
+
 import AttributeSet from "../../components/AttributeSet";
 import Button from "../../components/Button";
 import { Price } from "../../components/Price";
-import toast from "react-hot-toast";
-import { parseHtml } from "../../utils/parseHtml";
-
-import styles from "./ProductPage.module.css";
 import { ShoppingCartContext } from "../../lib/ShoppingCartContext";
+import styles from "./ProductPage.module.css";
 
 class ProductPage extends Component {
   static contextType = ShoppingCartContext;

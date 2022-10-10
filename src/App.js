@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Navbar from "./components/Navbar";
+import React, { Component, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,13 +7,29 @@ import {
 } from "react-router-dom";
 
 import { CurrencyProvider } from "./lib/CurrencyContext";
-import ShoppingCartProvider from "./lib/ShoppingCartContext";
+import { ShoppingCartProvider } from "./lib/ShoppingCartContext";
+
+import Navbar from "./components/Navbar";
 import ListingPage from "./pages/ListingPage";
-import ProductPage from "./pages/ProductPage";
-import CartPage from "./pages/CartPage";
+import ErrorPage from "./pages/ErrorPage";
+
+const CartPage = React.lazy(() => import("./pages/CartPage"));
+const ProductPage = React.lazy(() => import("./pages/ProductPage"));
 
 export default class App extends Component {
+  state = {
+    hasError: false,
+  };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
   render() {
+    if (this.state.hasError) {
+      return <ErrorPage />;
+    }
+
     return (
       <CurrencyProvider>
         <ShoppingCartProvider>
@@ -24,15 +39,20 @@ export default class App extends Component {
             </header>
             <main>
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  component={() => <Redirect to="/all" />}
-                />
-                <Route path="/product/:id" component={ProductPage} />
-                <Route path="/cart" component={CartPage} />
-                <Route path="/checkout" component={() => <div>Checkout</div>} />
-                <Route path="/:category" component={ListingPage} />
+                <Suspense fallback={<div>Loading</div>}>
+                  <Route
+                    exact
+                    path="/"
+                    component={() => <Redirect to="/all" />}
+                  />
+                  <Route path="/product/:id" component={ProductPage} />
+                  <Route path="/cart" component={CartPage} />
+                  <Route
+                    path="/checkout"
+                    component={() => <div>Checkout</div>}
+                  />
+                  <Route path="/:category" component={ListingPage} />
+                </Suspense>
               </Switch>
             </main>
           </Router>

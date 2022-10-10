@@ -47,11 +47,11 @@ export default class CurrencySwitcher extends Component {
   };
 
   componentDidMount() {
-    document.addEventListener("click", this.handleOutsideClick);
+    document.addEventListener("mousedown", this.handleOutsideClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("click", this.handleOutsideClick);
+    document.removeEventListener("mousedown", this.handleOutsideClick);
   }
 
   render() {
