@@ -18,6 +18,7 @@ export default class CartPage extends Component {
       <div className={styles.container}>
         <h1>Cart</h1>
         <div className={styles.products}>
+          {/* cart may have two products with the same id */}
           {cart.map((cartProduct, i) => (
             <CartPageProduct key={i} cartProduct={cartProduct} />
           ))}

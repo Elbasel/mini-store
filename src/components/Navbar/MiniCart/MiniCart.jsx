@@ -1,11 +1,11 @@
-import React, { Component, createRef } from "react";
+import React, { PureComponent, createRef } from "react";
 
 import CartIcon from "../../../assets/cart.svg";
 import MiniCartModal from "./MiniCartModal/";
 import { ShoppingCartContext } from "../../../lib/ShoppingCartContext";
 import styles from "./MiniCart.module.css";
 
-export default class MiniCart extends Component {
+export default class MiniCart extends PureComponent {
   static contextType = ShoppingCartContext;
 
   state = {
@@ -56,7 +56,6 @@ export default class MiniCart extends Component {
               <span className={styles.itemCounter}>{getCartQuantity()}</span>
             )}
           </div>
-          {/* TODO: modal only needs to be rendered when state is open */}
           {this.state.modalOpen && (
             <div
               ref={this.modalRef}

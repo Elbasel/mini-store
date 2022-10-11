@@ -1,10 +1,10 @@
-import React, { Component, createRef } from "react";
+import React, { PureComponent, createRef } from "react";
 
 import { CurrencyContext } from "../../../lib/CurrencyContext";
 import arrowDown from "../../../assets/arrow-down.svg";
 import styles from "./CurrencySwitcher.module.css";
 
-export default class CurrencySwitcher extends Component {
+export default class CurrencySwitcher extends PureComponent {
   static contextType = CurrencyContext;
 
   state = {
