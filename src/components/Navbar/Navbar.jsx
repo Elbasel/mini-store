@@ -17,7 +17,7 @@ class Navbar extends Component {
     return (
       <nav className={styles.navbar}>
         <NavList categories={categories} />
-        <img className={styles.icon} src={Icon} />
+        <img alt="logo" className={styles.icon} src={Icon} />
         <div className={styles.controlsContainers}>
           <CurrencySwitcher currencies={currencies} />
           <MiniCart />

@@ -25,10 +25,14 @@ export default class ProductCard extends Component {
             {!product.inStock && (
               <div className={styles.shade}>Out Of Stock</div>
             )}
-            <img className={styles.productImage} src={product.gallery[0]} />
+            <img
+              alt={product.name}
+              className={styles.productImage}
+              src={product.gallery[0]}
+            />
           </div>
 
-          <h3>{product.name}</h3>
+          <h2>{product.name}</h2>
           <Price prices={product.prices} className={styles.price} />
         </Link>
         {product.inStock && (
@@ -36,7 +40,7 @@ export default class ProductCard extends Component {
             className={styles.addToCart}
             onClick={() => this.handleAddToCart(product)}
           >
-            <img src={CarIcon}></img>
+            <img alt="add to cart button" src={CarIcon}></img>
           </div>
         )}
       </div>

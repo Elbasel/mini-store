@@ -60,6 +60,10 @@
   0% {
     transform: translateY(-60px);
     opacity: 0;
+    z-index: -1;
+  }
+  90% {
+    z-index: -1;
   }
 }
 

@@ -51,7 +51,7 @@ export default class MiniCart extends PureComponent {
       <>
         <div className={styles.container} ref={this.containerRef}>
           <div onClick={this.toggleModal} className={styles.iconContainer}>
-            <img src={CartIcon} />
+            <img alt="cart icon" src={CartIcon} />
             {+getCartQuantity() > 0 && (
               <span className={styles.itemCounter}>{getCartQuantity()}</span>
             )}

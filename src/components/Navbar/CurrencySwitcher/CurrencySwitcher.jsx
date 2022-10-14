@@ -61,7 +61,7 @@ export default class CurrencySwitcher extends PureComponent {
       <div ref={this.containerRef} className={styles.container}>
         <div className={styles.symbol} onClick={this.toggleModal}>
           {selectedCurrency.symbol}
-          <img src={arrowDown} />
+          <img alt="currency switcher arrow down" src={arrowDown} />
         </div>
 
         <ul
