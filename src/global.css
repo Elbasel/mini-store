@@ -70,6 +70,7 @@ header {
 /* Scrollbar */
 *::-webkit-scrollbar {
   width: 4px;
+  height: 3px;
 }
 
 *::-webkit-scrollbar-thumb {
