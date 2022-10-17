@@ -46,13 +46,7 @@
   animation: fade-in 300ms;
 }
 
-.hidden {
-  display: none;
-}
 
-.slideOut {
-  animation: slide-out 300ms ease-in-out;
-}
 
 /* animations */
 
@@ -65,14 +59,6 @@
   }
 }
 
-@keyframes slide-out {
-  0% {
-  }
-  100% {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-}
 
 @keyframes fade-in {
   0% {

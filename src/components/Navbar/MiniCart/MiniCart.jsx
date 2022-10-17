@@ -15,15 +15,9 @@ export default class MiniCart extends PureComponent {
   // To check when user clicks outside the container.
   containerRef = createRef();
 
-  // To animate the modal closing
-  modalRef = createRef();
 
   toggleModal = () => {
-    if (this.state.modalOpen) {
-      this.closeModal();
-      return;
-    }
-    this.setState({ modalOpen: true });
+    this.setState(prevState => ({ modalOpen: !prevState.modalOpen }));
   };
 
   closeModal = () => {
@@ -32,6 +26,7 @@ export default class MiniCart extends PureComponent {
 
   handleOutsideClick = (e) => {
     if (!this.containerRef.current.contains(e.target)) {
+      // if user clicks on product card button that is no longer part of this element
       if (e.target.tagName === "BUTTON" && e.target.textContent === "-") return;
       this.closeModal();
     }
@@ -52,15 +47,13 @@ export default class MiniCart extends PureComponent {
         <div className={styles.container} ref={this.containerRef}>
           <div onClick={this.toggleModal} className={styles.iconContainer}>
             <img alt="cart icon" src={CartIcon} />
-            {+getCartQuantity() > 0 && (
+            {getCartQuantity() > 0 && (
               <span className={styles.itemCounter}>{getCartQuantity()}</span>
             )}
           </div>
           {this.state.modalOpen && (
             <div
-              ref={this.modalRef}
-              className={`${styles.miniCartModal} ${
-                this.state.modalOpen ? "" : `${styles.hidden}`
+              className={`${styles.miniCartModal} 
               }`}
             >
               <MiniCartModal closeModal={this.closeModal} />

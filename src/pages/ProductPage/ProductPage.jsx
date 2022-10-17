@@ -49,6 +49,7 @@ class ProductPage extends Component {
         <div className={styles.gallery}>
           {product.gallery.map((image) => (
             <img
+            alt={product.name}
               key={image}
               src={image}
               onClick={() => this.changeCurrentImage(image)}
@@ -56,7 +57,7 @@ class ProductPage extends Component {
           ))}
         </div>
         <div className={styles.mainImage}>
-          <img src={this.state.currentImage || product.gallery[0]} />
+          <img alt={product.name} src={this.state.currentImage || product.gallery[0]} />
         </div>
         <div className={styles.info}>
           <h1>{product.brand}</h1>
