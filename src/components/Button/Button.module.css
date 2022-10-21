@@ -1,67 +1,50 @@
 .button {
   width: 100%;
-  background-size: 200% !important;
-  transition: 0.5s 10ms;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.9rem;
   padding: 0.8rem 0;
   border: 1px solid;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 100%;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background 1s, color 1s, transform 100ms;
+}
+
+/* states */
+
+.button:disabled {
+  background-size: 0;
+  background-color: var(--color-shadow);
+  color: white;
+  border-color: var(--color-shadow);
 }
 
 .button:hover {
-  background-position: left;
+  background-size: 0;
+  color: black;
 }
 
-.button:not(:disabled):active {
-  transform: scale(1.1);
+.button:active {
+  transform: scale(1.03);
 }
 
-.button:disabled {
-  border-color: transparent;
-  color: white;
-  background: var(--color-shadow);
-}
-
-.button:disabled:hover {
-  color: white;
-}
-
-/* Sizes */
-.sm {
-  width: 100px;
-}
-
-.md {
-  width: 200px;
-}
-
-.lg {
-  width: 300px;
-}
-
-/* Varients */
-
-.regular {
-  border-color: var(--color-dark);
-  background: linear-gradient(
-      to left,
-      var(--color-bg) 50%,
-      var(--color-dark) 50%
-    )
-    right;
-}
-
-.regular:hover {
-  color: white;
-}
+/* variants */
 
 .confirm {
   border-color: var(--color-green);
-  background: linear-gradient(to left, var(--color-green) 50%, white 50%) right;
-  color: white;
+  background-image: linear-gradient(to right, var(--color-green), var(--color-green));
 }
 
-.confirm:hover {
-  color: var(--color-dark);
+.regular {
+  border-color: var(--color-dark);
+  background-image: linear-gradient(to right, var(--color-dark), var(--color-dark));
+}
+
+
+/* sizes */
+
+.lg {
+  width: 300px;
 }
