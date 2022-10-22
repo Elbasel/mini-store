@@ -19,7 +19,7 @@ export default class ProductCard extends Component {
   render() {
     const { product } = this.props;
     return (
-      <div className={styles.container}>
+      <article className={styles.container}>
         <Link to={`/product/${product.id}`} className={styles.card}>
           <div className={styles.imageContainer}>
             {!product.inStock && (
@@ -43,7 +43,7 @@ export default class ProductCard extends Component {
             <img alt="add to cart button" src={CarIcon}></img>
           </div>
         )}
-      </div>
+      </article>
     );
   }
 }
