@@ -17,6 +17,7 @@
 
   /* horizontal padding is applied to <main> and <Navbar/> */
   --horizontal-padding: 7%;
+  --scrollbar-width: 4px;
 }
 
 body {
@@ -69,7 +70,7 @@ header {
 
 /* Scrollbar */
 *::-webkit-scrollbar {
-  width: 4px;
+  width: var(--scrollbar-width);
   height: 3px;
 }
 

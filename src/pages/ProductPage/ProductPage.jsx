@@ -39,17 +39,18 @@ class ProductPage extends Component {
 
     if (!product) return null;
 
-    const canAddToCart =
+    const canAddToCart = !(
       !product.inStock ||
       Object.keys(this.state.selectedAttributes).length !==
-        product.attributes.length;
+        product.attributes.length
+    );
 
     return (
       <div className={styles.container}>
         <div className={styles.gallery}>
           {product.gallery.map((image) => (
             <img
-            alt={product.name}
+              alt={product.name}
               key={image}
               src={image}
               onClick={() => this.changeCurrentImage(image)}
@@ -57,7 +58,10 @@ class ProductPage extends Component {
           ))}
         </div>
         <div className={styles.mainImage}>
-          <img alt={product.name} src={this.state.currentImage || product.gallery[0]} />
+          <img
+            alt={product.name}
+            src={this.state.currentImage || product.gallery[0]}
+          />
         </div>
         <div className={styles.info}>
           <h1>{product.brand}</h1>
@@ -79,10 +83,16 @@ class ProductPage extends Component {
             <Price prices={product.prices} className={styles.price} />
           </div>
           <Button
-            title={product.inStock ? "Add to cart" : "Out of stock"}
+            title={
+              product.inStock
+                ? canAddToCart
+                  ? "Add to cart"
+                  : "Please select attributes"
+                : "Out of stock"
+            }
             variant="confirm"
             size="lg"
-            disabled={canAddToCart}
+            disabled={!canAddToCart}
             onClick={() =>
               this.handleAddToCart(product, this.state.selectedAttributes)
             }
