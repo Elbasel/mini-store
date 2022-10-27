@@ -13,7 +13,6 @@
 }
 
 /* states */
-
 .button:disabled {
   background-size: 0;
   background-color: var(--color-shadow);
@@ -21,7 +20,7 @@
   border-color: var(--color-shadow);
 }
 
-.button:hover {
+.button:not(:disabled):hover {
   background-size: 0;
   color: black;
 }
@@ -31,7 +30,6 @@
 }
 
 /* variants */
-
 .confirm {
   border-color: var(--color-green);
   background-image: linear-gradient(to right, var(--color-green), var(--color-green));
@@ -44,7 +42,6 @@
 
 
 /* sizes */
-
 .lg {
   width: 300px;
 }

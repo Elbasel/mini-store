@@ -20,7 +20,6 @@ class ListingPage extends Component {
 
           {category.products.map((product) => (
             <ProductCard key={product.id} product={product} />
-            // <div className={styles.productCard}>Product Card</div>
           ))}
         </div>
       </>
