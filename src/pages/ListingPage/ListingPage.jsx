@@ -17,8 +17,10 @@ class ListingPage extends Component {
       <>
         <h1 className={styles.categoryTitle}>{category?.name}</h1>
         <div className={styles.productsContainer}>
+
           {category.products.map((product) => (
             <ProductCard key={product.id} product={product} />
+            // <div className={styles.productCard}>Product Card</div>
           ))}
         </div>
       </>

@@ -16,7 +16,7 @@
   --font-body: "Raleway", sans-serif;
 
   /* horizontal padding is applied to <main> and <Navbar/> */
-  --horizontal-padding: 2rem;
+  --horizontal-padding: 7%;
 }
 
 body {

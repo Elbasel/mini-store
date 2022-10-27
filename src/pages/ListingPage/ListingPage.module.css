@@ -1,12 +1,19 @@
 .categoryTitle {
-  margin: 3rem 0;
+  margin: 2.5rem 0;
   font-size: 42px;
   font-weight: 400;
   text-transform: capitalize;
 }
+.productsContainer { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.7%;
+  row-gap: 1%;
 
-.productsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
+} 
+
+.productCard {
+  height: 444px;
+  background-color: tomato;
+
 }

@@ -1,0 +1,13 @@
+.categoryTitle {
+  margin: 3rem 0;
+  font-size: 42px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
