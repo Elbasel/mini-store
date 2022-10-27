@@ -1,16 +1,17 @@
 .container {
   position: relative;
-  /* width: 30%; */
-  /* min-width: 400px; */
-  height: 444px;
-  padding: 16px;
+  padding: 1rem;
+}
+
+.container:hover {
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);  
 }
 
 .card {
-  /* height: 600px; */
   color: var(--color-dark);
   position: relative;
 }
+
 .imageContainer {
   position: relative;
 }
@@ -26,7 +27,6 @@
   font-size: 1.5rem;
   color: #8d8f9a;
   opacity: 0.6;
-  height: 330px;
 }
 
 .productImage {
@@ -37,14 +37,21 @@
 }
 
 .card h2 {
-  margin-top: 1rem;
+  margin-top: 24px;
   font-weight: 300;
   font-size: 1.1rem;
+  line-height: 1.6;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
 }
 
 .price {
   font-weight: 500;
-  margin-top: 1rem;
+  line-height: 1.6;
+
 }
 
 .container:hover .addToCart {
@@ -63,7 +70,7 @@
 
   display: grid;
   place-items: center;
-  transition: all 200ms;
+  transition: all 100ms;
 }
 
 .addToCart:hover {

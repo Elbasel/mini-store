@@ -6,7 +6,8 @@
 }
 .productsContainer { 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* prevent long titles from expanding children */
+  grid-template-columns: repeat(3 , minmax(0, 1fr));
   column-gap: 2.7%;
   row-gap: 1%;
 
