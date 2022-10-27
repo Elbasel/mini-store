@@ -3,6 +3,7 @@
   font-size: 1.2rem;
   color: var(--color-dark);
   margin-bottom: 1rem;
+  font-family: var(--font-roboto);
 }
 
 .textSet {
@@ -15,7 +16,7 @@
   min-width: fit-content;
   max-width: 4rem;
   height: 3rem;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", serif;
   font-weight: 400;
   display: grid;
   place-items: center;

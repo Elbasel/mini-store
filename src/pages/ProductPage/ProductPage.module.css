@@ -1,8 +1,6 @@
 .container {
   display: grid;
   grid-template-columns: 10% 42% 1fr;
-  /* gap: 1rem; */
-  /* margin-bottom: 2rem; */
   margin-top: 40px;
 }
 
@@ -28,16 +26,11 @@
 
 }
 
-/* .mainImage {
-  margin-right: 7%;
-} */
-
 .mainImage img {
   object-fit: cover;
   object-position: top;
   width: 100%;
 }
-
 
 .info {
   padding-left: 20%;
@@ -62,7 +55,7 @@
 }
 
 .priceContainer h2 {
-  font-family: "Roboto Condensed";
+  font-family: var(--font-roboto);
   font-weight: 700;
   font-size: 1.2rem;
   margin-top: 1rem;
