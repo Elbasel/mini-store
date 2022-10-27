@@ -17,7 +17,7 @@
   background-size: 0;
   background-color: var(--color-shadow);
   color: white;
-  border-color: var(--color-shadow);
+  border-color: transparent;
 }
 
 .button:not(:disabled):hover {

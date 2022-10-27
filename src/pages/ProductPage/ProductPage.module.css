@@ -64,7 +64,7 @@
 .price {
   font-weight: 700;
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin-block: 0.7rem 1.2rem;
 }
 
 .description span {
