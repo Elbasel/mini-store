@@ -36,12 +36,8 @@
   object-fit: cover;
   object-position: top;
   width: 100%;
-  /* height: 80vh; */
 }
 
-.mainImage img:hover {
-  object-fit: contain;
-}
 
 .info {
   padding-left: 20%;

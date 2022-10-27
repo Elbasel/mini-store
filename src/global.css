@@ -14,13 +14,11 @@
   --color-shadow: #39374838;
   --color-hover: #d6d0d058;
   --font-body: "Raleway", sans-serif;
-
-  /* horizontal padding is applied to <main> and <Navbar/> */
-  --horizontal-padding: 7%;
   --scrollbar-width: 4px;
 }
 
 body {
+  padding: 0 7%;
   font-size: 16px;
   font-family: var(--font-body);
   background-color: var(--color-bg);
@@ -48,7 +46,6 @@ button {
 }
 
 main {
-  padding: 0 var(--horizontal-padding);
   padding-bottom: 4rem;
 }
 
