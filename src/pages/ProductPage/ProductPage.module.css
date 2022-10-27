@@ -8,7 +8,7 @@
 
 .gallery {
   max-height: 80vh;
-  padding-right: calc(2 * var(--scrollbar-width)); /* 2 x scrollbar-width */
+  padding-right: calc(2 * var(--scrollbar-width));
   overflow-y: hidden;
   margin-right: 3%;
 }
@@ -23,9 +23,9 @@
 }
 
 .gallery:hover {
-  padding-right: var(--scrollbar-width); 
+  padding-right: var(--scrollbar-width);
   overflow-y: scroll;
-  
+
 }
 
 /* .mainImage {
@@ -41,7 +41,7 @@
 
 .info {
   padding-left: 20%;
-  
+
 }
 
 .info h1 {
