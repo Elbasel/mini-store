@@ -1,12 +1,14 @@
 .container {
   display: flex;
-  margin-top: 80px;
+  margin-top: 160px;
 
 }
 
 .gallery {
   width: 5.5%;
   margin-right: 2.7%;
+  flex-shrink: 0;
+
 }
 
 .gallery img:hover {
@@ -16,6 +18,7 @@
 .mainImage {
   width: 42%;
   margin-right: 7%;
+  flex-shrink: 0;
 }
 
 .mainImage img {
