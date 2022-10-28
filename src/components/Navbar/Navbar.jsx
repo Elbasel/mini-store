@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import { graphql } from "@apollo/client/react/hoc";
 import { gql } from "@apollo/client";
 
@@ -8,19 +8,54 @@ import CurrencySwitcher from "./CurrencySwitcher";
 import MiniCart from "./MiniCart";
 import styles from "./Navbar.module.css";
 
-class Navbar extends Component {
+class Navbar extends PureComponent {
+  state = {
+    previousScrollYPosition: 0,
+    visible: true,
+  };
+
+  onScroll = () => {
+    const currentScrollYPosition = window.scrollY;
+
+    const isScrollingUp =
+      currentScrollYPosition < this.state.previousScrollYPosition;
+
+    if (isScrollingUp) {
+      this.setState({ visible: true });
+    } else {
+      this.setState({ visible: false });
+    }
+
+    this.setState({ previousScrollYPosition: window.scrollY });
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.onScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+  }
+
   render() {
     const { categories, currencies, error } = this.props.data;
 
     if (!categories || !currencies) return null;
 
     return (
-      <nav className={styles.navbar}>
+      <nav
+        className={`${styles.navbar} ${
+          this.state.visible ? styles.shown : styles.hidden
+        }`}
+      >
         <NavList categories={categories} />
         <img alt="logo" className={styles.icon} src={Icon} />
         <div className={styles.controlsContainers}>
-          <CurrencySwitcher currencies={currencies} />
-          <MiniCart />
+          <CurrencySwitcher
+            navShown={this.state.visible}
+            currencies={currencies}
+          />
+          <MiniCart navShown={this.state.visible} />
         </div>
       </nav>
     );

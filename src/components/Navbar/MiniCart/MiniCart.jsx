@@ -15,9 +15,8 @@ export default class MiniCart extends PureComponent {
   // To check when user clicks outside the container.
   containerRef = createRef();
 
-
   toggleModal = () => {
-    this.setState(prevState => ({ modalOpen: !prevState.modalOpen }));
+    this.setState((prevState) => ({ modalOpen: !prevState.modalOpen }));
   };
 
   closeModal = () => {
@@ -42,6 +41,12 @@ export default class MiniCart extends PureComponent {
 
   render() {
     const { getCartQuantity } = this.context;
+    const { navShown } = this.props;
+
+    if (!navShown) {
+      this.closeModal();
+    }
+
     return (
       <>
         <div className={styles.container} ref={this.containerRef}>

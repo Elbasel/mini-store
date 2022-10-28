@@ -1,10 +1,15 @@
 .navbar {
   height: 80px;
-
+  position: fixed;
+  padding: 0 7%;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  z-index: 99;
 }
 
 .icon {
@@ -23,4 +28,31 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.hidden {
+  animation: slide-up 500ms forwards ease-in-out;
+
+}
+
+.shown {
+  animation: slide-down 500ms forwards ease-in-out;
+
+}
+
+@keyframes slide-up {
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-200px);
+
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }

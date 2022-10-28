@@ -49,6 +49,7 @@ button {
 main {
   padding: 0 var(--horizontal-padding);
   padding-bottom: 4rem;
+  margin-top: 120px;
 }
 
 a {
@@ -60,12 +61,7 @@ ul {
   list-style: none;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  background-color: white;
-}
+
 
 /* Scrollbar */
 *::-webkit-scrollbar {

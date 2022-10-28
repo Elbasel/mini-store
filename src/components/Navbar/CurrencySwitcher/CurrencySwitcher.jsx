@@ -54,7 +54,12 @@ export default class CurrencySwitcher extends PureComponent {
   }
 
   render() {
-    const { currencies } = this.props;
+    const { currencies, navShown } = this.props;
+
+    if (!navShown) {
+      this.closeModal();
+    }
+
     const { currency: selectedCurrency } = this.context;
 
     return (
