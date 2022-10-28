@@ -7,6 +7,7 @@ import NavList from "./NavList";
 import CurrencySwitcher from "./CurrencySwitcher";
 import MiniCart from "./MiniCart";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 class Navbar extends PureComponent {
   state = {
@@ -14,16 +15,22 @@ class Navbar extends PureComponent {
     visible: true,
   };
 
+  threshold = 100;
+
   onScroll = () => {
     const currentScrollYPosition = window.scrollY;
 
     const isScrollingUp =
       currentScrollYPosition < this.state.previousScrollYPosition;
 
+    const scrolledMoreThanThreshold = currentScrollYPosition > this.threshold;
+
     if (isScrollingUp) {
       this.setState({ visible: true });
     } else {
-      this.setState({ visible: false });
+      if (scrolledMoreThanThreshold) {
+        this.setState({ visible: false });
+      }
     }
 
     this.setState({ previousScrollYPosition: window.scrollY });
@@ -49,7 +56,9 @@ class Navbar extends PureComponent {
         }`}
       >
         <NavList categories={categories} />
-        <img alt="logo" className={styles.icon} src={Icon} />
+        <Link className={styles.icon} to="/">
+          <img alt="logo" src={Icon} />
+        </Link>
         <div className={styles.controlsContainers}>
           <CurrencySwitcher
             navShown={this.state.visible}
