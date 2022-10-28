@@ -45,6 +45,10 @@ class ProductPage extends Component {
         product.attributes.length
     );
 
+    const notSelected = product.attributes.find(
+      (elem) => !(elem.id in this.state.selectedAttributes)
+    );
+
     return (
       <div className={styles.container}>
         <div className={styles.gallery}>
@@ -87,7 +91,7 @@ class ProductPage extends Component {
               product.inStock
                 ? canAddToCart
                   ? "Add to cart"
-                  : "Please select attributes"
+                  : `Please select ${notSelected?.name}`
                 : "Out of stock"
             }
             variant="confirm"
