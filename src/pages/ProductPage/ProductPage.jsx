@@ -53,7 +53,7 @@ class ProductPage extends Component {
               alt={product.name}
               key={image}
               src={image}
-              onClick={() => this.changeCurrentImage(image)}
+              onMouseOver={() => this.changeCurrentImage(image)}
             />
           ))}
         </div>

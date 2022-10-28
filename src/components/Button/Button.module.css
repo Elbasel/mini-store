@@ -9,6 +9,7 @@
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
+  cursor: pointer;
   transition: background 1s, color 1s, transform 100ms;
 }
 
@@ -18,6 +19,7 @@
   background-color: var(--color-shadow);
   color: white;
   border-color: transparent;
+  cursor: not-allowed;
 }
 
 .button:not(:disabled):hover {
