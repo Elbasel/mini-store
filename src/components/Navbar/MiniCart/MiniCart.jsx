@@ -43,8 +43,11 @@ export default class MiniCart extends PureComponent {
     const { getCartQuantity } = this.context;
     const { navShown } = this.props;
 
-    if (!navShown) {
-      this.closeModal();
+    if (!navShown && this.state.modalOpen) {
+      // prevent state change during update
+      setTimeout(() => {
+        this.closeModal();
+      }, 0);
     }
 
     return (

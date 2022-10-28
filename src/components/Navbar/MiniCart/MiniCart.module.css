@@ -32,6 +32,7 @@
   min-width: 420px;
   width: 30%;
   height: 500px;
+
   animation: slide-in 400ms ease-in-out;
 }
 
