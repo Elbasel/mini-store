@@ -4,17 +4,16 @@
   font-weight: 400;
   text-transform: capitalize;
 }
-.productsContainer { 
+.productsContainer {
   display: grid;
   /* prevent long titles from expanding children */
-  grid-template-columns: repeat(3 , minmax(0, 1fr));
+  /* grid-template-columns: repeat(3 , minmax(0, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 2.7%;
   row-gap: 1%;
-
-} 
+}
 
 .productCard {
   height: 444px;
   background-color: tomato;
-
 }
