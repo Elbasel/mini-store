@@ -1,0 +1,49 @@
+.button {
+  width: 100%;
+  padding: 0.8rem 0;
+  border: 1px solid;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 100%;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 1s, color 1s, transform 100ms;
+}
+
+/* states */
+.button:disabled {
+  background-size: 0;
+  background-color: var(--color-shadow);
+  color: white;
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+.button:not(:disabled):hover {
+  background-size: 0;
+  color: black;
+}
+
+.button:not(:disabled):active {
+  transform: scale(1.03);
+}
+
+/* variants */
+.confirm {
+  border-color: var(--color-green);
+  background-image: linear-gradient(to right, var(--color-green), var(--color-green));
+}
+
+.regular {
+  border-color: var(--color-dark);
+  background-image: linear-gradient(to right, var(--color-dark), var(--color-dark));
+}
+
+
+/* sizes */
+.lg {
+  width: 300px;
+}
