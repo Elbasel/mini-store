@@ -2783,6 +2783,13 @@ babel-plugin-transform-react-remove-prop-types@^0.4.24:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
   integrity sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==
 
+babel-plugin-transform-rebem-jsx@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-rebem-jsx/-/babel-plugin-transform-rebem-jsx-0.3.3.tgz#07e25386ddda06d5b2fe8ee3704fa4feb9e73970"
+  integrity sha512-bmHWaFyiNK0ShD1y2shmE5A/XhJp+2lLwhrEuPQfVwDTxMfeJ0VTOntSRoA0cytQD4psr22quMymdmDqCFjx7w==
+  dependencies:
+    rebem-classname "0.x.x"
+
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.0.1.tgz#b4399239b89b2a011f9ddbe3e4f401fc40cff73b"
@@ -7577,6 +7584,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+rebem-classname@0.x.x:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/rebem-classname/-/rebem-classname-0.4.0.tgz#7fd2c503e49e20b7202f201bdb8b699011a2c167"
+  integrity sha512-vHGkKulnAw4dck9VR8TdHPno8hh1Z7i2DzG/qJPyyKxWTe2gyGo6mNHWN0nqcAN9ZKjODIqzsRuV1qo5VNPnQg==
 
 recursive-readdir@^2.2.2:
   version "2.2.2"

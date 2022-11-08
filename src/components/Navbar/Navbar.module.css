@@ -10,6 +10,7 @@
   justify-content: space-between;
   background-color: white;
   z-index: 99;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
 }
 
 .icon {
@@ -32,12 +33,10 @@
 
 .hidden {
   animation: slide-up 500ms forwards ease-in-out;
-
 }
 
 .shown {
   animation: slide-down 500ms forwards ease-in-out;
-
 }
 
 @keyframes slide-up {
@@ -49,7 +48,6 @@
 @keyframes slide-down {
   0% {
     transform: translateY(-200px);
-
   }
 
   100% {
